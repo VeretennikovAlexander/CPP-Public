@@ -29,3 +29,7 @@ Richard Jones, Antony Hosking, Eliot Moss. The Garbage Collection Handbook: The 
 Keywords:
 
 The Boehm-Demers-Weiser conservative garbage collector.
+
+Links:
+
+https://en.cppreference.com/w/cpp/language/types
