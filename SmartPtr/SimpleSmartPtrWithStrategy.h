@@ -330,7 +330,7 @@ public:
 
 		if (Counter->Weak == 0)
 		{
-			printf("Delete counter %d\r\n", (int)Counter);
+			printf("Delete counter %d\r\n", (int)Counter->Count);
 			delete Counter;
 			Counter = 0;
 			return 0;
@@ -352,7 +352,7 @@ public:
 
 		if (Counter->Weak == 0)
 		{
-			printf("Delete counter %d\r\n", (int)Counter);
+			printf("Delete counter %d\r\n", (int)Counter->Count);
 			delete Counter;
 			Counter = 0;
 			return 1;

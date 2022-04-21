@@ -50,13 +50,13 @@ public:
 
 	}
 
-	CList(T Value)
+	explicit CList(T Value)
 	{
 		Head = make_shared<CItem>();
 		Head->Value = Value;
 	}
 
-	CList(initializer_list<T> L)
+	explicit CList(initializer_list<T> L)
 	{
 		for (auto it = rbegin(L); it != rend(L); it++)
 		{
@@ -64,7 +64,7 @@ public:
 		}
 	}
 
-	CList(T Value, CList Tail)
+	explicit CList(T Value, CList Tail)
 	{
 		Head = make_shared<CItem>();
 		Head->Value = Value;
@@ -198,7 +198,20 @@ public:
 		{
 			return T();
 		}
-		return Tail().FoldL(f, Head->Value);
+		return Tail().FoldL<U>(f, Head->Value);
+	}
+
+	template <class U>
+	T FoldR(function < U(T, T)> f)
+	{
+		if (!Head)
+		{
+			return T();
+		}
+		if (!Head->Tail)
+			return Head->Value;
+
+		return f(Head->Value, Tail().FoldR<U>(f));
 	}
 
 	CList Concat(const CList Right) const
@@ -235,7 +248,7 @@ public:
 	{
 		if (IsEmpty())
 		{
-			return CList<T>();
+			return CList<CList>();
 		}
 
 		T Current = Head->Value;
@@ -248,7 +261,7 @@ public:
 
 		if (Second.IsEmpty())
 		{
-			return First;
+			return CList<CList>(First);
 		}
 		
 		return CList<CList>(First) + Second.Group();
@@ -361,6 +374,12 @@ public:
 		printf("Sum %d\r\n", List2.FoldL<int>([](int A, int B) -> int {
 			return A + B;
 		}, 0));
+		printf("Sum %d\r\n", List2.FoldL<int>([](int A, int B) -> int {
+			return A + B;
+		}));
+		printf("Sum %d\r\n", List2.FoldR<int>([](int A, int B) -> int {
+			return A + B;
+		}));
 		
 		List2.Filter([](int Value) {
 			return Value != 2;

@@ -117,13 +117,13 @@ public:
 
 	}
 
-	CList(T Value)
+	explicit CList(T Value)
 	{
 		Head = make_shared<CItem>();
 		Head->Value = Value;
 	}
 
-	CList(initializer_list<T> L)
+	explicit CList(initializer_list<T> L)
 	{
 		for (auto it = rbegin(L); it != rend(L); it++)
 		{
@@ -131,7 +131,7 @@ public:
 		}
 	}
 
-	CList(T Value, CList Tail)
+	explicit CList(T Value, CList Tail)
 	{
 		Head = make_shared<CItem>();
 		Head->Value = Value;
@@ -302,7 +302,7 @@ public:
 	{
 		if (IsEmpty())
 		{
-			return CList<T>();
+			return CList<CList>();
 		}
 
 		T Current = Head->Value;
@@ -315,7 +315,7 @@ public:
 
 		if (Second.IsEmpty())
 		{
-			return First;
+			return CList<CList>(First);
 		}
 		
 		return CList<CList>(First) + Second.Group();

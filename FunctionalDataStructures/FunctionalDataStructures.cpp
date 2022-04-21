@@ -8,6 +8,7 @@
 #include <memory>
 #include <algorithm>
 #include <vector>
+#include <intrin.h>
 
 using namespace std;
 
@@ -16,9 +17,11 @@ using namespace std;
 #include "RandomAccessList.h"
 #include "BinominalHeap.h"
 #include "BinaryNumber.h"
+#include "Array.h"
+#include "HashArrayMappedTrie.h"
 
 int main()
-{
+{	
 	CListTest Test;
 	Test.Test();
 
@@ -33,6 +36,12 @@ int main()
 
 	CBinaryNumberTest BinaryNumberTest;
 	BinaryNumberTest.Test();
+
+	CArrayTest ArrayTest;
+	ArrayTest.Test();
+
+	CHashArrayMappedTrieTest HashArrayMappedTrieTest;
+	HashArrayMappedTrieTest.Test();
 
 //	getchar();
     return 0;

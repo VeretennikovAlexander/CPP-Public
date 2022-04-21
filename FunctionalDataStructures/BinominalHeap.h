@@ -46,6 +46,11 @@ class CBinominalHeap
 
 	CNodeList Heap;
 
+	/*
+		Применяется для слияния двух деревьев одинакового ранга r в дерево ранга (r+1).
+		Путем добавления одного из деревьев в качестве первого элемента Children другого дерева.
+		В списке Children деревья упорядочены по убыванию ранга.
+	*/
 	PNode Link(PNode First, PNode Second) const
 	{
 		if (First->Value < Second->Value)
@@ -58,6 +63,10 @@ class CBinominalHeap
 		}
 	}
 
+	/**
+		Ранг дерева Tree должен быть <= ранга всех деревьев в Children.
+		В Children деревья упорядочены по возрастанию ранга.
+	*/
 	CNodeList InsTree(PNode Tree, CNodeList Children) const
 	{
 		if (Children.IsEmpty())
@@ -75,11 +84,20 @@ class CBinominalHeap
 		}
 	}
 
+	/**
+		Вставляет элемент в кучу.
+		На основании элемента создаем дерево ранга 0.
+		Вставляем его в кучу Children.
+		Children - список деревьев, упорядоченный по возрастанию ранга.
+	*/
 	CNodeList Insert(T Value, CNodeList Children) const
 	{
 		return InsTree(make_shared<CNode>(0, Value), Children);
 	}
 
+	/**
+		Оба аргумента - списки деревьев, упорядоченные по возрастанию ранга.
+	*/
 	CNodeList Merge(CNodeList First, CNodeList Second) const
 	{
 		if (First.IsEmpty())
@@ -148,6 +166,10 @@ public:
 		return Heap.IsEmpty();
 	}
 
+	/*
+		Для дерева узлы в списке Children упорядочены по убыванию ранга, поэтому перед Merge делаем Reverse.
+		А в списке Heap деревья упорядочены по возрастанию ранга.
+	*/
 	CBinominalHeap DeleteMin() const
 	{
 		PNode MinNode = GetMinNode();

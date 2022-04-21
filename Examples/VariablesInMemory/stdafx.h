@@ -10,20 +10,6 @@
 #include <stdio.h>
 #include <tchar.h>
 
-#include <time.h>
-
-#include <string>
-#include <functional>
-#include <memory>
-#include <algorithm>
-#include <vector>
-
-//For min
-#include <stdlib.h>
-
-#include <windows.h>
-
-using namespace std;
 
 
 // TODO: reference additional headers your program requires here

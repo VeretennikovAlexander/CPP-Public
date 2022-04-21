@@ -105,10 +105,42 @@ public:
 
 	string ToString()
 	{
-		return List.ToString();
+		return List.Reverse().ToString();
 	}
 
-	
+
+	CBinaryNumber Add(size_t Size) const
+	{
+		CBinaryNumber V = *this;
+
+		for (size_t i = 0; i < Size; i++)
+		{
+			V = V.Inc();
+		}
+
+		return V;
+	}
+
+	CBinaryNumber Sub(size_t Size) const
+	{
+		CBinaryNumber V = *this;
+
+		for (size_t i = 0; i < Size; i++)
+		{
+			V = V.Dec();
+		}
+
+		return V;
+	}
+
+	void Print()
+	{
+		List.Reverse().ForEach([](int V) {
+			printf("%d", V);
+			return true;
+		});
+		printf("\n");
+	}
 };
 
 class CBinaryNumberTest
@@ -129,5 +161,8 @@ public:
 			Number = Number.Dec();
 			printf("%s\r\n", Number.ToString().c_str());
 		}
+
+		Number.Add(100).Print();
+		Number.Add(100).Sub(2).Print();
 	};
 };

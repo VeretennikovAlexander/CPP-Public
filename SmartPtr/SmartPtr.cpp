@@ -16,6 +16,14 @@ namespace SimpleSmartPtr2 {
 	#include "SimpleSmartPtr2.h"
 
 }
+
+namespace SimpleSmartPtr3 {
+
+#include "SimpleSmartPtr3.h"
+
+}
+
+
 namespace SimpleSmartPtrWithStrategy {
 
 	#include "SimpleSmartPtrWithStrategy.h"
@@ -29,17 +37,23 @@ namespace SimplePtr
 
 #include "SmartPtr.h"
 
-#include "StandardSmartPtr.h"
+#include "Standard/StandardSmartPtr.h"
 
-#include "StandardSmartPtr2.h"
+#include "Standard/StandardSmartPtr2.h"
 
-#include "StandardSmartPtr3.h"
+#include "Standard/StandardSmartPtr3.h"
 
 #include "SmartPtrVirtual.h"
 
+#include "Standard/UniquePtr.h"
+
+#include "Standard/AutoPtr.h"
+
+#include "Standard/CustomDeleter.h"
+
 int main()
 {
-	/*
+	
 	CSmartPtrDetailedTester SmartPtrTester;
 	SmartPtrTester.Test();
 		
@@ -47,14 +61,13 @@ int main()
 	SimpleSmartPtr::CSimpleSmartPtrTester SimpleSmartPtrTester;
 	SimpleSmartPtrTester.Test();
 	printf("\r\n");
-	*/
-
+	
 	printf("\r\nSimple Smart Pointer/Strategy Test\r\n\r\n");
 	SimpleSmartPtrWithStrategy::CSimpleSmartPtrTester SimpleSmartPtrTester1;
 	SimpleSmartPtrTester1.Test();
 	SimpleSmartPtrTester1.TestDefaultConstructor();
 	printf("\r\n");
-	/*
+	
 	CStandardSmartPtrTester StandardSmartPtrTester;
 	StandardSmartPtrTester.Test();
 
@@ -66,7 +79,25 @@ int main()
 
 	CWeakPtrTester3 WeakPtrTester3;
 	WeakPtrTester3.Test();
-	*/
+
+	{
+		CUniquePtrTester UniquePtrTester;
+		UniquePtrTester.Test();
+	}
+
+	CAutoPtrTester AutoPtrTester;
+	AutoPtrTester.Test();
+
+	{
+		CCustomDeleterTester1 CustomDeleterTester;
+		CustomDeleterTester.Test();
+	}
+
+	printf("\r\nSimple Smart Pointer Test (3)\r\n\r\n");
+	SimpleSmartPtr3::CSimpleSmartPtrTester SimpleSmartPtrTester3;
+	SimpleSmartPtrTester3.Test();
+	printf("\r\n");
+	
     return 0;
 }
 
