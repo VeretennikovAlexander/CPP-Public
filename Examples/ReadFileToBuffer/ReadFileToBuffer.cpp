@@ -27,7 +27,7 @@ int main()
     } else
     {
 		printf("Cannot read file\r\n");
-	}
+    }
 
     free(buffer);
 
