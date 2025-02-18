@@ -37,3 +37,14 @@ The Boehm-Demers-Weiser conservative garbage collector.
 Links:
 
 https://en.cppreference.com/w/cpp/language/types
+
+См. также
+
+https://vk.com/wall-227225018_4
+
+https://vk.com/wall-227225018_10
+
+https://vk.com/wall-227225018_64
+
+https://vk.com/wall-227225018_119
+
