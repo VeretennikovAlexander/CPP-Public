@@ -1,4 +1,6 @@
-﻿# CPP-Public
+﻿См. также
+
+https://vk.com/osfirst
 
 Список литературы
 
