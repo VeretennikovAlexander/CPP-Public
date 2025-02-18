@@ -34,6 +34,23 @@ public:
 	}
 };
 
+class CCustomAllocator
+{
+public:
+	
+	void* Alloc(size_t Size)
+	{
+		return malloc(Size);
+	}
+	
+	void Free(void* Ptr)
+	{
+		free(Ptr);
+	}
+};
+
+CCustomAllocator CustomAllocator;
+
 template <class T>
 class CMyAllocator
 {
@@ -55,14 +72,14 @@ public:
 	{
 		//printf("Allocate %d\n", (int)(Count * sizeof(T)));
 
-		return (T*)malloc(sizeof(T) * Count);
+		return (T*)CustomAllocator.Alloc(sizeof(T) * Count);
 	}
 
 	void deallocate(T* V, size_t Count)
 	{
 		//printf("Free %d\n", (int)(Count * sizeof(T)));
 
-		free(V);
+		CustomAllocator.Free(V);
 	}
 };
 
@@ -112,6 +129,8 @@ int main()
 	uint64_t End = GetCurrentTimeMs();
 
 	printf("Time (ms) %d\n", (int)(End - Start));
+	
+	printf("Press any key\r\n");
 
 	getchar();
 
