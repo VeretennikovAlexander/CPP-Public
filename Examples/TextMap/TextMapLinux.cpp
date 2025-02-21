@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 class CStringComparator
@@ -104,8 +107,31 @@ void TextMapTest()
 		}
 	}
 
+/*
 	for (auto Entry : Map)
 	{
+		printf("Word %s, count %llu\n", Entry.first, (unsigned long long)Entry.second);
+	}
+	
+*/	
+	
+	vector<pair<const char*, size_t> > Vec;
+	Vec.reserve(Map.size());
+	for (auto Item : Map)
+	{
+		Vec.push_back(Item);
+	}
+	sort(Vec.begin(), Vec.end(), [](pair<const char*, size_t> &A, pair<const char*, size_t>& B) -> bool{
+		return B.second < A.second;
+		});
+		
+	size_t count = Vec.size();
+	if (count > 10)
+		count = 10;
+	
+	for (size_t i = 0; i<count; i++)
+	{
+		auto& Entry = Vec[i];
 		printf("Word %s, count %llu\n", Entry.first, (unsigned long long)Entry.second);
 	}
 
