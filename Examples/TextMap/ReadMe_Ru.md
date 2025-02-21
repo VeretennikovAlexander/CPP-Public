@@ -40,9 +40,9 @@ https://en.cppreference.com/w/cpp/string/byte/isalnum
 
 См. примеры
 
-https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/TextMap/TextMapLinux.cpp
 
-TextMap/TextMapLinux.cpp
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/TextMap/TextMap.cpp
 
 Этап 6) Добавить замеры времени работы алгоритма.
 
