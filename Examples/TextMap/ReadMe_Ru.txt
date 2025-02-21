@@ -39,7 +39,7 @@ https://en.cppreference.com/w/cpp/string/byte/isalnum
 Для этого можно перенести данные map в vector и отсортировать их по убыванию частоты встречаемости слова в тексте.
 
 См. пример
-https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Examples/ReadFileToBuffer
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/TextMap/TextMapLinux.cpp
 
 Этап 6) Добавить замеры времени работы алгоритма.
 
@@ -64,7 +64,11 @@ https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Examples/ReadFil
 
 Не использовать объекты "string".
 
-Использовать char* для строк.
+Использовать char* для строк и map<const char*, size_t, ...>.
+
+См. примеры
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/TextMap/TextMapLinux.cpp
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/TextMap/TextMap.cpp
 
 При парсинге текста использовать только буфер Text, другие строки не выделять.
 
