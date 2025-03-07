@@ -48,3 +48,8 @@ https://vk.com/wall-227225018_64
 
 https://vk.com/wall-227225018_119
 
+Задачи:
+
+См.
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Tasks.md
