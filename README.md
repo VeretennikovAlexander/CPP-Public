@@ -4,7 +4,7 @@
 
 https://vk.com/osfirst
 
-Список литературы
+# Список литературы
 
 Дональд Кнут. Искусство программирования. Том 1. Основные алгоритмы. Раздел: Динамическая память.
 
@@ -30,26 +30,40 @@ Henry S. Warren. Hacker's Delight.
 
 Richard Jones, Antony Hosking, Eliot Moss. The Garbage Collection Handbook: The Art of Automatic Memory Management.
 
-Keywords:
+# Ключевые слова / Keywords
 
 The Boehm-Demers-Weiser conservative garbage collector.
 
-Links:
+# Ссылки / Links
 
 https://en.cppreference.com/w/cpp/language/types
 
-См. также
+# См. также
+
+Пример того, как осуществляется вызов функции. Соглашение о вызовах stdcall.
 
 https://vk.com/wall-227225018_4
 
+Пример того, как осуществляется вызов функции. Соглашение о вызовах cdecl.
+
 https://vk.com/wall-227225018_10
+
+О естественных адресах и выравнивании полей в структурах.
 
 https://vk.com/wall-227225018_64
 
+Примеры режимов адресации процессоров архитектуры x86 (Intel 8086 и прочие).
+
 https://vk.com/wall-227225018_119
 
-Задачи:
+# Задачи
 
 См.
 
 https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Tasks.md
+
+# Базовые примеры
+
+https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Examples
+
+https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Tutorial
