@@ -1,12 +1,25 @@
 
 #include <stdio.h>
 
+/*
+ * Example of a structure without fixed alignment.
+ * 
+ * sizeof = 8
+ * 
+ */ 
 struct CExampleStruct
 {
 	char C;
 	int I;
 };
 
+/*
+ * Exampe of a structure with fixed alignment.
+ * 
+ * sizeof = 5
+ * 
+ */ 
+ 
 #pragma pack(push,1)
 
 struct CExampleStruct1

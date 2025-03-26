@@ -1,4 +1,7 @@
 
+/*
+    Pointer to a Function examples.
+ */
 typedef int(*CMainPtr)(int count, char* args);
 
 typedef int(__stdcall *CFunc1Ptr)(int arg1, int arg2);
