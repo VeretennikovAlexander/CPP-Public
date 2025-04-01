@@ -4,6 +4,8 @@
 
 https://vk.com/osfirst
 
+https://github.com/VeretennikovAlexander/AboutMe/blob/master/README.md
+
 # Список литературы
 
 Дональд Кнут. Искусство программирования. Том 1. Основные алгоритмы. Раздел: Динамическая память.
