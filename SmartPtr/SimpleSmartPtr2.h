@@ -15,6 +15,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/*
+  В этом примере добавлены операторы сравнения умных указателей.
+  Добавлен оператор преобразования к обычному указателю.
+*/
 	
 template <class T>
 class CSimpleSmartPtr
@@ -79,6 +83,9 @@ public:
 		}
 	}
 
+        /*
+          Определяем два оператора T* и void*, чтобы нельзя было применить delete к умному указателю.
+        */
 	operator T*()
 	{
 		return Ptr;
