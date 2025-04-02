@@ -16,6 +16,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/*
+ * Базовый пример 
+ * 
+ * 1) Определение операторов -> и *
+ * 2) excplicit конструктор
+ * 3) Удаление вложенного объекта в деструкторе.
+ * 4) Запрет копирования.
+ * 
+ */
+
 template <class T>
 class CSimplePtr
 {
@@ -34,7 +44,7 @@ public:
 
 	~CSimplePtr()
 	{
-		delete Ptr;
+		if (Ptr) delete Ptr;
 	}
 
 	T* operator->() const
