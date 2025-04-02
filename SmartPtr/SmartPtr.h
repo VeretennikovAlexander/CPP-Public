@@ -1,6 +1,6 @@
 ﻿/*
 
-Пример для курса ФИЛП, УрФУ, 2017-2018. Веретенников А. Б.
+Пример для курса ФИЛП, УрФУ, 2017-2025. Веретенников А. Б.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -15,6 +15,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/**
+Опциональный усложненный пример, можно не смотреть.
+*/
 
 template <class T, class CTraits>
 class CDeleteFreeStrategy

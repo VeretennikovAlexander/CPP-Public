@@ -1,6 +1,6 @@
 ﻿/*
 
-Пример для курса ФИЛП, УрФУ, 2017-2022. Веретенников А. Б.
+Пример для курса ФИЛП, УрФУ, 2017-2025. Веретенников А. Б.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
