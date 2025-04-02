@@ -15,6 +15,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
+/*
+CCounterStrategy стратегия с подсчетом ссылок.
+CLinkedListStrategy стратегия с двусвязным циклическим списком.
+CCloneBasicStrategy стратегия клонирования.
+CEmbeddedCounterStrategy стратегия с внедренным счетчиком.
+CWeakPtrSupportStrategy пример реализации слабой ссылки.
+*/
 
 template <class T>
 class CCounterStrategy
