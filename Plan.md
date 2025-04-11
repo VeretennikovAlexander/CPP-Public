@@ -70,6 +70,8 @@ https://github.com/VeretennikovAlexander/CPP-Public/tree/master/SmartPtr
 
 Стратегия с поддержкой слабой ссылки.
 
+См. Андрей Александреску. Современное проектирование на C++. 2015 г (Andrei Alexandrescu. Modern C++ Design: Generic Programming and Design Patterns Applied.) + исходники shared_ptr в Visual Studio
+
 ## Стандартые умные указатели
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/SmartPtr/Standard
