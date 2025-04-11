@@ -69,3 +69,11 @@ https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Tasks.md
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Examples
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Tutorial
+
+
+# См. также
+
+https://google.github.io/styleguide/cppguide.html
+
+https://github.com/isocpp/CppCoreGuidelines
+
