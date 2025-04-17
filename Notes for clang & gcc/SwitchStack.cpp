@@ -55,6 +55,17 @@ void Test(uint64_t Num, uint64_t StartSP)
  * 
  * https://avrdudes.github.io/avr-libc/avr-libc-user-manual-2.2.0/inline_asm.html
  * 
+ * Интересно что (цитата):
+ * 
+ * 8MB is the virtual size of the stack. 
+ * A page fault will happen when your application tries to use more stack than 
+ * is currently physically allocated. 
+ * The kernel's page fault handler will then 
+ * allocated a physical page and then your application will continue.
+ * 
+ * https://unix.stackexchange.com/questions/473416/why-on-modern-linux-the-default-stack-size-is-so-huge-8mb-even-10-on-some-di
+ * https://unix.stackexchange.com/questions/127602/default-stack-size-for-pthreads/280865#280865
+ * 
  */
 int main(int args, char** argv)
 {
