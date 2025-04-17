@@ -66,6 +66,21 @@ void Test(uint64_t Num, uint64_t StartSP)
  * https://unix.stackexchange.com/questions/473416/why-on-modern-linux-the-default-stack-size-is-so-huge-8mb-even-10-on-some-di
  * https://unix.stackexchange.com/questions/127602/default-stack-size-for-pthreads/280865#280865
  * 
+ * 
+ * Пример вывода:
+ * 
+ * Current SP: 140733752199072
+ * f1(200000): 20000100001
+ * Stack usage: 6400080
+ * New Stack Size: 67108864
+ * Switch Stack
+ * Buffer End: 134635858161680
+ * New SP    : 134635858161680
+ * f1(2000000): 2000001000001
+ * Stack usage: 64000080
+ * Restore Stack
+ * Completed
+ * 
  */
 int main(int args, char** argv)
 {
@@ -74,6 +89,9 @@ int main(int args, char** argv)
 		
     cout << "Current SP: " << InitialSP << endl;
 		
+	/*
+	 * При таком вызове стека 8МБ хватает. А если вызывать с 2000000, уже нет.
+	 */ 
     Test(200000, InitialSP);
     
     size_t BufferSize = 1024*1024*64;
@@ -89,6 +107,9 @@ int main(int args, char** argv)
     cout << "Buffer End: " << (uintptr_t)(Buffer + BufferSize) << endl;
     cout << "New SP    : " << NewSP << endl;
     
+    /*
+	 * Увеличили стек и с 2000000 тоже работает.
+	 */ 
     Test(2000000, NewSP);
 
     cout << "Restore Stack" << endl;
