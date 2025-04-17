@@ -89,9 +89,9 @@ int main(int args, char** argv)
 		
     cout << "Current SP: " << InitialSP << endl;
 		
-	/*
-	 * При таком вызове стека 8МБ хватает. А если вызывать с 2000000, уже нет.
-	 */ 
+    /*
+    * При таком вызове стека 8МБ хватает. А если вызывать с 2000000, уже нет.
+    */
     Test(200000, InitialSP);
     
     size_t BufferSize = 1024*1024*64;
@@ -108,8 +108,8 @@ int main(int args, char** argv)
     cout << "New SP    : " << NewSP << endl;
     
     /*
-	 * Увеличили стек и с 2000000 тоже работает.
-	 */ 
+    * Увеличили стек и с 2000000 тоже работает.
+    */
     Test(2000000, NewSP);
 
     cout << "Restore Stack" << endl;
