@@ -69,10 +69,10 @@ void Test(uint64_t Num, uint64_t StartSP)
  */
 int main(int args, char** argv)
 {
-	uint64_t InitialSP = 0;
-	asm volatile ("mov %%rsp, %0" : "=r" (InitialSP) );
+    uint64_t InitialSP = 0;
+    asm volatile ("mov %%rsp, %0" : "=r" (InitialSP) );
 		
-	cout << "Current SP: " << InitialSP << endl;
+    cout << "Current SP: " << InitialSP << endl;
 		
     Test(200000, InitialSP);
     
@@ -96,7 +96,7 @@ int main(int args, char** argv)
 
     delete[] Buffer;
 
-	cout << "Completed" << endl;
+    cout << "Completed" << endl;
 	
-	return 0;
+    return 0;
 }
