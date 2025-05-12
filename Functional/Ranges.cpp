@@ -11,7 +11,7 @@
  * 
  * Example command line:
  * g++-14 -std=c++23 -Wall -o "Ranges" "Ranges.cpp"
- * (Ubunty);
+ * (Ubuntu);
  * 
  * Note:
  * https://dev.to/marcosplusplus/how-to-install-gcc-14-and-use-c23-41od
@@ -33,9 +33,9 @@
  
 using namespace std;
 
-int main(int argc, char** argv)
+void example1(vector<int>& numbers)
 {
-    vector<int> numbers = {1, 2, 3, 4, 5, 10, 12, 6, 4};
+	
 
 	/*
      * filter, transform to double, sort (using ranges::sort), transform to vector of strings, join elements
@@ -51,47 +51,66 @@ int main(int argc, char** argv)
         | views::join_with(',')
         | ranges::to<string>();
     
-    printf("%s\n", res1.c_str());
+    printf("Example1: %s\n", res1.c_str());
     
-    /*
+    printf("for_each example:\n");
+    
+   	/*
+	 * 	for_each example.
+	 */            
+    ranges::for_each(res, 
+		[](double val){printf("%2.3f\n", val); } );
+
+}
+
+void example2(vector<int>& numbers)
+{	
+
+	/*
      * The same result.
      * filter, transform to double, convert multiset (for sorting), transform to vector of strings, join elements
      */
      
-    auto res2 = numbers | views::filter([](int val){ return val % 2 == 0; }) 
+    auto res = numbers | views::filter([](int val){ return val % 2 == 0; }) 
 		| views::transform([](int val) -> double { return (double)val; }) 
 		| ranges::to<multiset>()
 		| views::transform([](double i){return to_string(i);})
         | views::join_with(',')
         | ranges::to<string>();
         
-    printf("%s\n", res2.c_str());
+    printf("Example2: %s\n", res.c_str());
+
+}
+
+void example3(vector<int>& numbers)
+{
 
 	/*
-	 * 	for_each example.
-	 */            
-    ranges::for_each(res, 
-		[](double val){printf("%2.3f\n", val); } );
-		
-
-    /*
      * Sort with projection example.
     */
-    auto res3 = numbers | views::filter([](int val){ return val % 2 == 0; }) 
+    auto res = numbers | views::filter([](int val){ return val % 2 == 0; }) 
     	| views::transform([](int val) -> pair<double,double> { return make_pair(0, val); }) 
     	| ranges::to<vector>();
 
     //Sort with projection (by a specified field of the structure).
-    ranges::sort(res3, {}, &pair<double,double>::second);	
+    ranges::sort(res, {}, &pair<double,double>::second);	
 	
     //Use this to sort in the reverse order.
     //ranges::sort(res3, ranges::greater(), &pair<double,double>::second);	
 	
-    auto res4 = res3 | views::transform([](pair<double,double> i){return to_string(i.second);})
+    auto res1 = res | views::transform([](pair<double,double> i){return to_string(i.second);})
         | views::join_with(',')
         | ranges::to<string>();
    
-    printf("%s\n", res4.c_str());
+    printf("Example3: %s\n", res1.c_str());
+}
+
+int main(int argc, char** argv)
+{
+	vector<int> numbers = {1, 2, 3, 4, 5, 10, 12, 6, 4};
+    example1(numbers);
+    example2(numbers);
+    example3(numbers);   
     
 }
 
