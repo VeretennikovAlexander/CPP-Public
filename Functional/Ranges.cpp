@@ -26,7 +26,7 @@
  * Rainer Grimm, C++20: Get the Details, 
  * Section: The Ranges Library
  * 
- * 
+ * https://en.cppreference.com/w/cpp/ranges
  * https://en.cppreference.com/w/cpp/algorithm/ranges/sort
  * 
  **/
