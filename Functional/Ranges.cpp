@@ -107,7 +107,7 @@ void example3(vector<int>& numbers)
 
 int main(int argc, char** argv)
 {
-	vector<int> numbers = {1, 2, 3, 4, 5, 10, 12, 6, 4};
+    vector<int> numbers = {1, 2, 3, 4, 5, 10, 12, 6, 4};
     example1(numbers);
     example2(numbers);
     example3(numbers);   
