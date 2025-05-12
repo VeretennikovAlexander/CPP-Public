@@ -36,13 +36,13 @@ int main(int argc, char** argv)
 		return a+b; 
 		}, 1000);
 		
-	auto add1000std = bind_front(plus<int>(), 1000);
+    auto add1000std = bind_front(plus<int>(), 1000);
     
     cout << add1000(10) << endl;
     cout << add1000lambda(10) << endl;
     cout << add1000std(10) << endl;
 
-	return 0;
+    return 0;
 }
 
 
