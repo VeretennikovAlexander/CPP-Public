@@ -29,6 +29,8 @@
  * https://en.cppreference.com/w/cpp/ranges
  * https://en.cppreference.com/w/cpp/algorithm/ranges/sort
  * 
+ * See also: Java Stream API.
+ * 
  **/
  
 using namespace std;
