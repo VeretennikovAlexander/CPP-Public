@@ -22,7 +22,6 @@
  **/
 
 using namespace std;
-using namespace std::placeholders;  // for _1, _2, _3...
 
 int myminmax(int val, int minValue, int maxValue)
 {
@@ -33,11 +32,11 @@ int myminmax(int val, int minValue, int maxValue)
 
 int main(int argc, char** argv)
 {
-	using namespace std::placeholders;  // for _1, _2, _3...
+    using namespace std::placeholders;  // for _1, _2, _3...
 	
-	/*
-	 * Первый аргумент так и останется аргументом, второй и третий фиксируем.
-	 */
+    /*
+    * Первый аргумент так и останется аргументом, второй и третий фиксируем.
+    */
     auto min10max15 = bind(myminmax, _1, 10, 15);
    
     cout << min10max15(2) << endl;
