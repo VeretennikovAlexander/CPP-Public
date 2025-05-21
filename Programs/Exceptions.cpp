@@ -312,7 +312,17 @@ void Example6()
         RemoveVectoredExceptionHandler(H);
 }
 
-
+/*
+ * See also:
+ * 
+ * TIB - Thread Information Block (Win32)
+ * From Wikipedia:
+ * 
+ * pointer 	FS:[0x00] 	GS:[0x00] 	Win9x and NT 	Current Structured Exception Handling (SEH) frame. Note: the 64-bit version of Windows uses stack unwinding done in kernel mode instead.
+ * pointer 	FS:[0x04] 	GS:[0x08] 	Win9x and NT 	Stack Base / Bottom of stack (high address)
+ * pointer 	FS:[0x08] 	GS:[0x10] 	Win9x and NT 	Stack Limit / Ceiling of stack (low address) 
+ * 
+ **/
 int main()
 {
     Example1();
