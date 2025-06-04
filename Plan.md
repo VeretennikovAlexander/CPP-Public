@@ -118,11 +118,23 @@ https://github.com/VeretennikovAlexander/CPP-Public/blob/master/FunctionalDataSt
 
 # Сборка мусора, основные понятия и пример реализации в C++
 
+## Виды сборщиков мусора, Mark & Sweep, Mark & Compact, Copying, Reference-Counting, консервативный сборщик мусора.
+
+См. также
+
+Richard Jones, Antony Hosking, Eliot Moss. The Garbage Collection Handbook: The Art of Automatic Memory Management.
+
+The Boehm-Demers-Weiser conservative garbage collector.
+
 ## Консервативный сборщик мусора Mark & Sweep (однопоточная реализация)
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/FunctionalDataStructuresGC
 
-## Копирующий сборщик мусора  (однопоточная реализация)
+## Сборщики мусора Mark & Compact
+
+Алгоритм "Два пальца, Эдварда" / Edward's two fingers, Lisp2.
+
+## Консервативный копирующий сборщик мусора (однопоточная реализация)
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/FunctionalDataStructuresGCCopying
 
