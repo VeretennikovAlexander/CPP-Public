@@ -126,13 +126,63 @@ https://github.com/VeretennikovAlexander/CPP-Public/tree/master/FunctionalDataSt
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/FunctionalDataStructuresGCCopying
 
+# Функциональные возможности стандартной библиотеки
+
+## Основные возможности
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Functional/ForEach.cpp
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Functional/Sort1.cpp
+
+## Bind
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Functional/Sort1.cpp
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Functional/Sort1.cpp
+
+## Ranges library
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Functional/Ranges.cpp
+
 # Шаблоны и метапрограммирование
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Metaprogramming
 
+## Частичная специализация шаблона / Partial template specialization
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/TemplateSpecialization.h
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/Conditional.h
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/StaticAssert.h
+
+## Curiously recurring template pattern
+
+Curiously recurring template pattern (CRTP)
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/CuriouslyRecurring.h
+
+## Шаблоны с переменным числом аргументов
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/VarArgTemplate.h
+
+## Type traits
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/TypeTraits.h
+
+## Концепты
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Metaprogramming/Concepts.h
+
 # Исключения и SEH
 
 https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Programs/Exceptions.cpp
+
+# Прочее
+
+## Битовые поля
+
+https://github.com/VeretennikovAlexander/CPP-Public/blob/master/Examples/BitFields.cpp
 
 # Практики
 
@@ -159,7 +209,7 @@ https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Examples/TextMap
 
 https://github.com/VeretennikovAlexander/CPP-Public/tree/master/Notes%20for%20clang%20%26%20gcc
 
-Готовые реализации не выкладываются, т. к. делаются студентами на паре
+Готовые реализации не выкладываются, так как делаются студентами на паре
 
 ### Реализация умного указателя
 
