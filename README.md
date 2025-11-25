@@ -4,6 +4,12 @@
 
 https://vk.com/osfirst
 
+Telegram-канал и VK преподавателя
+
+https://t.me/UralDragon
+
+https://vk.com/veretennikov.alexander
+
 https://github.com/VeretennikovAlexander/AboutMe/blob/master/README.md
 
 # Список литературы
