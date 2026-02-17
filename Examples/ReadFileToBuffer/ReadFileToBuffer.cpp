@@ -1,6 +1,7 @@
 
 #include <fstream>
 #include <limits>
+#include <type_traits> 
 
 using namespace std;
 
@@ -9,7 +10,9 @@ int main()
     ifstream file("./ReadFileToBuffer.cpp", ios::binary | ios::ate);
     streamsize size = file.tellg();
     
-    if (size >= numeric_limits<size_t>::max())
+    using unsigned_streamsize  = std::make_unsigned_t<streamsize>;
+    
+    if ((unsigned_streamsize)size >= numeric_limits<size_t>::max())
     {
 		printf("File is to big\r\n");
 		return 1;
@@ -29,7 +32,7 @@ int main()
 		printf("Cannot read file\r\n");
     }
 
-    free(buffer);
+    delete[] buffer;
 
     return 0;
 }
