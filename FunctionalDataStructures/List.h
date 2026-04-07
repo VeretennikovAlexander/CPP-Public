@@ -124,7 +124,7 @@ public:
 			return CList<U>();
 		}
 
-		return CList<U>(f(Head->Value), Tail().Map<U>(f));
+		return CList<U>(f(Head->Value), Tail().template Map<U>(f));
 	}
 
 	template<class F>
@@ -198,7 +198,7 @@ public:
 		{
 			return T();
 		}
-		return Tail().FoldL<U>(f, Head->Value);
+		return Tail().template FoldL<U>(f, Head->Value);
 	}
 
 	template <class U>
@@ -211,7 +211,7 @@ public:
 		if (!Head->Tail)
 			return Head->Value;
 
-		return f(Head->Value, Tail().FoldR<U>(f));
+		return f(Head->Value, Tail().template FoldR<U>(f));
 	}
 
 	CList Concat(const CList Right) const
@@ -239,7 +239,7 @@ public:
 	{
 		return Map<string>([](T Value) {
 			return to_string(Value);
-		}).FoldL<string>([](string A, string B) {
+		}).template FoldL<string>([](string A, string B) {
 			return A + ", " + B;
 		});
 	}

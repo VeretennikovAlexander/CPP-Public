@@ -239,7 +239,7 @@ public:
 
 		size_t Display = 200;
 
-		CArray<int> Array;
+		CArray<size_t> Array;
 		for (size_t i = 0; i < Display; i++)
 		{
 			Array = Array.Add(i);
@@ -258,7 +258,7 @@ public:
 
 		time_t Start = time((time_t*)0);
 
-		Array = CArray<int>();
+		Array = CArray<size_t>();
 		size_t Check = 2000;
 		for (size_t i = 0; i < Check; i++)
 		{

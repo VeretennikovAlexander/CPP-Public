@@ -130,7 +130,7 @@ class CBinominalHeap
 
 	PNode GetMinNode() const
 	{
-		return Heap.FoldL<PNode>([](PNode A, PNode B) {
+		return Heap.template FoldL<PNode>([](PNode A, PNode B) {
 			if (A->Value < B->Value)
 			{
 				return A;

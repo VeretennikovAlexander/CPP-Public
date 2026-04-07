@@ -61,6 +61,22 @@ class CHashArrayMappedTrie
 		virtual size_t ValueHeight() = 0;
 	};
 
+#ifdef __GNUC__
+	static unsigned int popcnt(unsigned int Value)
+	{
+		return __builtin_popcount(Value);
+	}
+	
+	static unsigned int popcnt(unsigned long Value)
+	{
+		return __builtin_popcountl(Value);
+	}
+
+	static unsigned long long popcnt(unsigned long long Value)
+	{
+		return __builtin_popcountll(Value);
+	}
+#else
 	static unsigned int popcnt(unsigned int Value)
 	{
 		return __popcnt(Value);
@@ -70,6 +86,7 @@ class CHashArrayMappedTrie
 	{
 		return __popcnt64(Value);
 	}
+#endif
 
 	struct CBitmapIndexedNode: public CNode
 	{
@@ -243,7 +260,7 @@ class CHashArrayMappedTrie
 			}
 			else
 			{
-				return PNode(new CMultiLeafNode(List.Map<pair<K, V> >([Key, Value](pair<K, V> Pair) {
+				return PNode(new CMultiLeafNode(List.template Map<pair<K, V> >([Key, Value](pair<K, V> Pair) {
 						if (Pair.first == Key)
 						{
 							return make_pair(Key, Value);
@@ -465,7 +482,7 @@ public:
 			Tree = Tree.Put(i, i);
 		}
 
-		printf("Tree height %d, value height %d\r\n", Tree.Height(), Tree.ValueHeight());
+		printf("Tree height %d, value height %d\r\n", (int)Tree.Height(), (int)Tree.ValueHeight());
 
 		for (int i = 0; i < Check; i++)
 		{
@@ -475,7 +492,7 @@ public:
 				printf("Search error %d\r\n", (int)(i));
 				break;
 			}
-			if (R.second != i)
+			if (R.second != (uint32_t)i)
 			{
 				printf("Search value error %d\r\n", (int)(i));
 				break;
@@ -518,7 +535,7 @@ public:
 				printf("Search error %d\r\n", (int)i);
 				break;
 			}
-			if (R.second != (i*2))
+			if (R.second != (uint32_t)(i*2))
 			{
 				printf("Search value error %d\r\n", (int)i);
 				break;
@@ -530,7 +547,7 @@ public:
 				printf("Search error %d\r\n", (int)(i+1));
 				break;
 			}
-			if (R.second != ((i + 1) * 2))
+			if (R.second != (uint32_t)((i + 1) * 2))
 			{
 				printf("Search value error %d\r\n", (int)(i + 1));
 				break;
@@ -542,7 +559,7 @@ public:
 				printf("Search error %d\r\n", (int)(i + 2));
 				break;
 			}
-			if (R.second != ((i + 2) * 2))
+			if (R.second != (uint32_t)((i + 2) * 2))
 			{
 				printf("Search value error %d\r\n", (int)(i + 2));
 				break;
